@@ -1,0 +1,14 @@
+env:
+  global:
+    - secure: "JbKa1S+T2SmdCH3Z2Yvcz3yJvrWl36yjVXo339s2lQp+4+CrizPPSVu+VHpwYHUVmC77GMj4ajIFsfqwc2yC/JU1NVcRLxf4MRFA4V7OhtmQOasF9MjAjqVYlI7tP8BAJ3LPcjtgzm89yRArUyCA1xDBX9Kx3fDHfTvgFLOMao8="
+before_install:
+  - sudo add-apt-repository --yes ppa:hansjorg/rust
+  - sudo add-apt-repository --yes ppa:cmrx64/cargo
+  - sudo apt-get update -qq
+install:
+  - sudo apt-get install -qq rust-nightly cargo
+script:
+  - hg clone https://bitbucket.org/tari/audiostream.rs
+  - cd audiostream.rs && cargo doc
+after_script:
+  - curl -O https://bitbucket.org/tari/tari.bitbucket.org/raw/default/travis_push.sh && sh travis_push.sh audiostream.rs/target/doc audiostream.rs
