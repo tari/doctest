@@ -6,5 +6,5 @@ install: sudo apt-get install libao-dev
 script:
   - cargo test
 after_script:
-  - rustdoc -L target/test src/lib.rs
+  - rustdoc -L target/test -L target/test/deps src/lib.rs
   - curl -O https://bitbucket.org/tari/tari.bitbucket.org/raw/default/travis_push.sh && sh travis_push.sh doc audiostream.rs
