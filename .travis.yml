@@ -1,7 +1,7 @@
 language: rust
 env:
   global:
-    - secure: "JbKa1S+T2SmdCH3Z2Yvcz3yJvrWl36yjVXo339s2lQp+4+CrizPPSVu+VHpwYHUVmC77GMj4ajIFsfqwc2yC/JU1NVcRLxf4MRFA4V7OhtmQOasF9MjAjqVYlI7tP8BAJ3LPcjtgzm89yRArUyCA1xDBX9Kx3fDHfTvgFLOMao8="
+    - secure: "LTcT7C715JhhozqmTGqsdiKeF/o+KN9sBtLd2HuyxsaKPeG1Ays+lMi2Xy6V1vttzOlnyMu+y9oLyI2mJI6I9cdAc4WdYGyrnJHJWpOP9YmPuFcCaDqDEOc/D9wf18iwrBw7+/FZswYgYUAieYcSoDclF4RpWDK0TCzmMqvo//s="
 install: sudo apt-get install libao-dev
 script:
   - cargo test
