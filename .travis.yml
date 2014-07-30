@@ -5,4 +5,4 @@ env:
 install: sudo apt-get install libao-dev
 after_script:
   - rustdoc -L target src/lib.rs
-  - curl -O https://bitbucket.org/tari/tari.bitbucket.org/raw/default/travis_push.sh && sh travis_push.sh target/doc audiostream.rs
+  - curl -O https://bitbucket.org/tari/tari.bitbucket.org/raw/default/travis_push.sh && sh travis_push.sh doc audiostream.rs
