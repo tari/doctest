@@ -2,6 +2,7 @@ language: rust
 env:
   global:
     - secure: "JbKa1S+T2SmdCH3Z2Yvcz3yJvrWl36yjVXo339s2lQp+4+CrizPPSVu+VHpwYHUVmC77GMj4ajIFsfqwc2yC/JU1NVcRLxf4MRFA4V7OhtmQOasF9MjAjqVYlI7tP8BAJ3LPcjtgzm89yRArUyCA1xDBX9Kx3fDHfTvgFLOMao8="
+install: sudo apt-get install libao-dev
 after_script:
   - rustdoc -L target src/lib.rs
   - curl -O https://bitbucket.org/tari/tari.bitbucket.org/raw/default/travis_push.sh && sh travis_push.sh target/doc audiostream.rs
