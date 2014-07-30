@@ -8,7 +8,7 @@ before_install:
 install:
   - sudo apt-get install -qq rust-nightly cargo
 script:
-  - hg clone https://bitbucket.org/tari/audiostream.rs
-  - cd audiostream.rs && cargo doc
+  - cargo build
+  - rustdoc -L target src/lib.rs
 after_script:
-  - curl -O https://bitbucket.org/tari/tari.bitbucket.org/raw/default/travis_push.sh && sh travis_push.sh audiostream.rs/target/doc audiostream.rs
+  - curl -O https://bitbucket.org/tari/tari.bitbucket.org/raw/default/travis_push.sh && sh travis_push.sh target/doc audiostream.rs
